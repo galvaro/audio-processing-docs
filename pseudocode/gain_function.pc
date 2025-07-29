@@ -1,0 +1,18 @@
+CONSTANTS:
+    MAX_GAIN <- 10
+    LOW_LIMIT <- 1/3
+    HIGH_LIMIT <- 2/3
+INPUT: 
+    in_array,
+    gain_perc
+OUTPUT:
+    out_array
+PROCEDURE:
+    gain <- MAX_GAIN * gain_perc
+    for (i=0; i<in_array.length; i++)
+        if( ABS(in_array[i]) < LOW_LIMIT )
+            out_array[i] <- in_array[i]
+        else if( ABS(in_array[i]) >= LOW_LIMIT AND ABS(in_array[i]) < HIGH_LIMIT )
+            out_array[i] <- in_array[i] * gain
+        else
+            out_array[i] <- 1
