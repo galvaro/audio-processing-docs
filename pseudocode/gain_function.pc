@@ -6,7 +6,7 @@ INPUT:
 OUTPUT:
     out_array
 PROCEDURE:
-    lowerbound < 1/3
+    lowerbound < LOW_LIMIT
     upperbound <- 1 - 2/3 * gain_rate
     for (i=0; i < in_array.length; i++)
         if( in_array[i] <= - upperbound )
